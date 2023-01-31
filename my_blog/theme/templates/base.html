@@ -1,5 +1,4 @@
 <!-- base html will be the page render on every single page swapping out block tags -->
-
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
     {% load pages_tags mezzanine_tags i18n static %}
@@ -94,8 +93,12 @@
 
         {% block page_header%}{% endblock page_header%}
 
-        {% block main %}{% endblock %}
 
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                {% block main %}{% endblock main %}
+            </div>
+        </div>
 
         <!-- Footer-->
         <footer class="border-top">
