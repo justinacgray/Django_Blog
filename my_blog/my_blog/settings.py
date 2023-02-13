@@ -328,6 +328,12 @@ FORMS_USE_HTML5 = True
 
 
 ####################
-# EMAIL SETTINGS #
+# EMAIL SETTINGS # CONFIGURE LATER
 ####################
+EMAIL_HOST = 'smtp.google.com'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS= True
+# EMAIL_HOST_USER = os.environ['YAHOO_EMAIL']
+EMAIL_HOST_PASSWORD = ''
 
+# print(EMAIL_HOST_USER)

@@ -1,0 +1,10 @@
+.form-floating .help-block {
+    display: none;
+}
+
+form.mezzanine-form input, form.mezzanine-form textarea {
+    width: 100%;
+    margin:25px;
+    font-size: large;
+    outline: none;
+}

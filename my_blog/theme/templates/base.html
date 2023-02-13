@@ -33,6 +33,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         {% load static %}
         <link rel='stylesheet' href='{% static '/css/styles.css' %}'>
+        <link rel='stylesheet' href='{% static '/css/custom.css' %}'>
         <link rel='stylesheet' href='{% static '/js/script.js' %}'>
 
         <link
@@ -93,10 +94,28 @@
 
         {% block page_header%}{% endblock page_header%}
 
+        {% if request.path == '/' %}
+        <header class="masthead" style="background-image:url('{{STATIC_URL}}img/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Shalom! </h1>
+                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        {% endif %}
+
 
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
-                {% block main %}{% endblock main %}
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    {% block main %}{% endblock main %}
+                </div>
             </div>
         </div>
 
@@ -140,9 +159,6 @@
                 </div>
             </div>
         </footer>
-
-
-
         {% block footer_js %}
         {% include "includes/footer_scripts.html" %}
         {% endblock %}
